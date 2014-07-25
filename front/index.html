@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reval</title>
+	<link rel="stylesheet" href="assets/styles/screen.css">
+	<script type="text/javascript" src="libs/angular/angular.js"></script>
+	<script type="text/javascript" src="libs/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="libs/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="assets/scripts/app.js"></script>
+</head>
+<body ng-app="revalApp">
+	<header>
+		<nav id="top">
+			<ul>
+				<li>
+					<a href="#!/balance">Balance</a>
+				</li>
+				<li>
+					<a href="#!/budgets">Budgets</a>
+				</li>
+			</ul>
+
+			<ul class="right">
+				<li>
+					<a href>Search</a>
+				</li>
+				<li>
+					<a href>New</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main ng-view></main>
+</body>
+</html>

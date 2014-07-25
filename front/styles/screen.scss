@@ -1,0 +1,178 @@
+$foreground: #2A3B41;
+$background: #ECEFF0;
+
+//@import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600,500,700);
+
+body {
+	background: $background;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	font-family: 'Raleway', sans-serif;
+
+	& > * {
+		transition: transform 0.1s ease-in-out;
+	}
+
+	&.searching > * {
+		transform: translateY(50px);
+	}
+}
+
+form.search {
+	background: darken($foreground, 8%);
+	margin-top: -50px;
+
+	input {
+		font-family: 'Raleway', sans-serif;
+		background: transparent;
+		border: none;
+		box-sizing: border-box;
+		color: #fff;
+		display: inline-block;
+		font-size: 1.4em;
+		font-weight: 300;
+		outline: none;
+		padding: 0.5em 1em;
+		width: 100%;
+	}
+
+	::input-placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+nav#top {
+	background: $foreground;
+	border-bottom: 1px solid darken($foreground, 12%);
+	padding: 0 3em;
+
+	.right {
+		float: right;
+	}
+
+	ul, li {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		height: 50px;
+		line-height: 55px;
+		cursor: pointer;
+
+		&.current {
+			background: darken($foreground, 8%);
+		}
+
+		&:hover {
+			background: darken($foreground, 4%);
+		}
+	}
+
+	a {
+		color: #fff;
+		font-size: 0.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: block;
+		padding: 0 1em;
+	}
+}
+
+.cr-modal {
+	position: fixed;
+	top: 25%;
+	left: 37.5%;
+	width: 25%;
+	background: white;
+	padding: 1em;
+	border-radius: 3px;
+	z-index: 2;
+	transition: all 1s ease;
+
+	h1 {
+		margin: 0;
+		margin-bottom: 1em;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	form > div {
+		margin-bottom: 1em;
+	}
+
+	label {
+		display: block;
+		vertical-align: top;
+		display: inline-block;
+		vertical-align: top;
+		width: 17%;
+	}
+
+	input[type="text"] {
+		border: none;
+		border-bottom: 1px dotted;
+		margin-left: 1em;
+		width: 70%;
+		display: inline-block;
+		vertical-align: top;
+		outline: none;
+		font-family: monaco;
+		font-size: 0.8em;
+		font-weight: bold;
+	}
+
+	input[type="submit"] {
+		background: $foreground;
+		color: #fff;
+		border: none;
+		padding: 0.7em;
+		border-radius: 3px;
+		font-size: 0.8em;
+		margin-top: 1em;
+		outline: none;
+		cursor: pointer;
+
+		&:hover {
+			background: lighten($foreground, 10%);
+		}
+
+		&:active {
+			background: lighten($foreground, 20%);
+		}
+	}
+
+	a.cancel {
+		margin-left: 1em;
+		color: $foreground;
+
+		&:hover {
+			color: lighten($foreground, 30%);
+		}
+
+		&:active {
+			color: lighten($foreground, 20%);
+		}
+	}
+}
+
+main {
+	background: white;
+	padding: 1em;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.cr-modal.ng-hide-add.ng-hide-add-active,
+.cr-modal.ng-hide-remove.ng-hide-remove-active {
+	transition: all 0.1s ease-in-out;
+}
+
+.cr-modal.ng-hide {
+	transform: scale(1.5);
+	opacity: 0;
+}
